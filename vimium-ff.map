@@ -191,3 +191,10 @@ map ,       previousTab
 map .       nextTab
 map <space> scrollPageDown
 map b       scrollPageUp
+map j       scrollDown
+map k       scrollUp
+map h       scrollLeft
+map l       scrollRight
+map /       enterFindMode
+map n       performFind
+map N       performBackwardsFind

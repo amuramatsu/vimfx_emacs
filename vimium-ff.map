@@ -188,7 +188,9 @@ map ? showHelp
 
 # Customize
 map ,       previousTab
+map <m-,>   previousTab
 map .       nextTab
+map <m-.>   nextTab
 map <space> scrollPageDown
 map b       scrollPageUp
 map j       scrollDown

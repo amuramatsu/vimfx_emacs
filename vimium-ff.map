@@ -200,3 +200,7 @@ map l       scrollRight
 map /       enterFindMode
 map n       performFind
 map N       performBackwardsFind
+map f       LinkHints.activateMode
+map F       LinkHints.activateModeToOpenInNewForegroundTab
+map H       goBack
+map L       goForward

@@ -6,7 +6,7 @@ local settings = require "settings"
 
 -- editor
 local editor = require "editor"
-editor.editor_cmd = "urxvt -e emacsclient +{line} {file} +{line}"
+editor.editor_cmd = "urxvt -e emacsclient +{line} {file}"
 
 -- downloads
 local downloads = require("downloads")
@@ -25,6 +25,15 @@ follow.ignore_case = true
 -- key binds (some Emacs like)
 local modes = require("modes")
 local completion = require("completion")
+modes.remap_binds("normal", {
+    { "b", "<Shift-space>", true },
+})
+modes.remap_binds("normal", {
+    { ",", "J", true },
+})
+modes.remap_binds("normal", {
+    { ".", "K", true },
+})
 modes.add_binds(
   "completion", {
     {"<Control-g>", "Stop completion and restore original command.",
@@ -48,3 +57,12 @@ function open_ext_browser (w)
   luakit.spawn(string.format("%s %q", cmd, uri))
 end
 
+-- startup
+local __startup = function ()
+  local lfs = require("lfs")
+  local dlscript = os.getenv("HOME") .. "/.local/share/luakit/adblock/download.sh"
+  if lfs.attributes(dlscript) ~= nil then
+    luakit.spawn(dlscript)
+  end
+end
+__startup()

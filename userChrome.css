@@ -1,0 +1,24 @@
+/* ウインドウアクティブ時のタイトルバーの背景色をOSのテーマ色に変更（以前の規定テーマと同じ） */
+:is(#TabsToolbar, #toolbar-menubar):not(:-moz-window-inactive) {
+  /* color: -moz-accent-color-foreground;
+     background-color: -moz-accent-color; */
+  color: AccentColorText;
+  background-color: AccentColor;
+}
+
+/* タブとタブバーの高さを調整 */
+/*
+:root {
+  --tab-min-height: 26px !important;
+}
+:root[uidensity="compact"] {
+  --tab-min-height: 26px !important;
+}
+*/
+
+/* ブックマークアイテムの高さを変える */
+.bookmark-item,
+.bookmark-item > menupopup,
+.bookmark-item > menupopup > menuitem {
+  padding-block: 0.2em !important;
+}
